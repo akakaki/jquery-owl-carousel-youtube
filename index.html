@@ -79,6 +79,10 @@
           $video.trigger('stop.owl.autoplay')
           player[$videoId].playVideo()
         }
+
+        const isIframe = $activeItem.children().is('iframe')
+
+        $('.label').text(isIframe ? player[$videoId].playerInfo.videoData.title : $activeItem.find('img').attr('title'))
       }
 
       const onPlayerStateChange = (event) => {
